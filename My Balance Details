@@ -1,0 +1,55 @@
+# Welcome to My Balance App
+## Are you quite disorganized person? 
+### Don´t worry, i built an app for you
+
+## About:
+> My balance is an app whose function is help you to organize
+> your expenses through differents forms that  
+> you will have to complete, it also have
+> three differents section where you can
+> add your available money & 
+> records. Movements related with expenses
+> will be shown in a table.
+
+## What can you do in expense table?
+
+- You can modify a file in case of a mistake
+- You can delete a file in case you do not need it anymore
+
+
+**_ Each Capital/Expense you add will be
+shown at the top of the page in 
+their respective places _** 
+
+## Installation
+
+* Step One: Go to the repository and find the green button which said **CODE**
+* Step Two: Copi the URL, in this case https://github.com/NicoSki/Alkemy-MyBalance.git
+* Step Three: Create a new folder in your computer desk (you can name it as you want)
+* Step Four: In that folder you will have to open the CMD 
+* Step Five: In the cmv write down the next code:
+
+```sh
+git clone https://github.com/NicoSki/Alkemy-MyBalance.git
+```
+
+### 🎉congratulations now you have the project in your hands🎊
+
+
+
+## Plugins
+
+
+
+| Plugin | Function | 
+| ------ | ------ |
+| Express(^4.17.3) | To managed differents kinds of routes |
+| Connect-flash(^0.1.1) | To send messages after a form action |
+| Ejs(^3.1.6) | to create dynamic templates  |
+| Method-override(^3.0.0) | To change forms action |
+| Mongoose(^5.12.0) |To manipulate different actions with the database |
+| moment(^2.29.1) | To set the date format |
+
+## Would you add/modify somethig? Let me know......
+* Nicoss2001@hotmail.com 📩 
+
