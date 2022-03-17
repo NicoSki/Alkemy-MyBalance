@@ -1,0 +1,28 @@
+<%- include("../partials/head") -%>
+
+
+   
+       
+
+
+
+            <a href="/balance"><button class="btn btn-primaty">🔙</button></a>
+
+            <body class="bg-dark d-flex justify-content-center align-items-center">
+                <div class="container bg-white rounded shadow p-4 m-4 col-xl-4 col-lg-6">
+                    <h2 class="w-100 text-center mb-4">ADD CAPITAL</h2>
+
+                    <hr style="color:grey" />
+
+
+                    <form action="/balance/newCapital" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">AMOUNT OF MONEY</label>
+                            <input type="number" name="money" class="form-control" min="1" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark w-100">SAVE CHANGES</button>
+                    </form>
+                </div>
+
+                <%- include("../partials/footer") -%>

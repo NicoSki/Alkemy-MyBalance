@@ -1,0 +1,74 @@
+<%- include("partials/head") -%>
+
+    <body>
+        <div class="container">
+
+
+            <a href="/balance"><button class="btn btn-primaty">🔙</button></a>
+
+            <h1 class="text-center">Moves:</h1>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Kind</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(expenses.length) { %>
+                        <% expenses.forEach(function(e){ %>
+                            <tr>
+                                <td>
+                                    <%= e.kind %>
+                                </td>
+                                <td>
+                                    <%= e.description %>
+                                </td>
+                                <td>
+                                    <%= e.date%>
+                                </td>
+                                <td>$
+                                    <%= e.price %>
+                                </td>
+                                <td class="d-flex justify-content-evenly ">
+                                    <a href="/balance/showMoves/edit/<%= e._id%>"><i class="fas fa-edit"></i></a>
+
+                                    <form action="/balance/delete/<%= e._id %>?_method=DELETE" method="post">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-danger btn-sm ">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <% } else { %>
+                                    <p class="text-center">Out of Moves</p>
+                                    <% } %>
+
+                                        <% if (edit_msg) { %>
+                                            <div class="alert alert-success alert-dismissible fade show w-50"
+                                                role="alert">
+                                                <%= edit_msg %>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <% } %>
+
+                                                <% if (deleted_msg) { %>
+                                                    <div class="alert alert-success alert-dismissible fade show w-50"
+                                                        role="alert">
+                                                        <%= deleted_msg %>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    </div>
+                                                    <% } %>
+                </tbody>
+            </table>
+
+        </div>
+        <%- include("partials/footer") -%>

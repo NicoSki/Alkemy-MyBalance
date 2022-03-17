@@ -1,0 +1,82 @@
+<%- include("partials/head") -%>
+
+
+    <header>
+        <div class="bg-black text-primary">
+            
+            <div class="text-center mb-5 p-3">
+                <h1>Welcome to MyBalance</h1>
+            </div>
+
+            <div class="d-flex justify-content-around">
+                <div>
+                    <h3>Available Money</h3>
+                    <% if(capital.length) { %>
+                        <p class="text-center">$ <%= capital[capital.length - 1].money %>
+                        </p>
+                        <% } else { %>
+                            <p class="text-center">No capital added</p>
+                            <% } %>
+                </div>
+
+                <div>
+                    <h3>Expenses</h3>
+                    <% if(expense.length) { %>
+                        <p class="text-center">$ <%= finalPrice %>
+                        </p>
+                        <% } else { %>
+                            <p class="text-center">No Moves yet</p>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <body id="particular">
+        <div class="d-flex justify-content-around">
+            <%- include("partials/aside") -%>
+
+
+                <div class="d-flex flex-column w-100">
+                    <h2 class="text-center text-primary">Movements:</h2>
+            
+                    <% if (success_msg) { %>
+                        <div class="alert alert-success alert-dismissible fade show w-50" role="alert">
+                            <%= success_msg %>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        <% } %>
+                    <br>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kind</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(inTable.length) { %>
+                                <% inTable.forEach(function(e){ %>
+                                    <tr>
+                                        <td>
+                                            <%= e.kind %>
+                                        </td>
+                                        <td>
+                                            <%= e.description %>
+                                        </td>
+                                        <td>
+                                            <%= e.date%>
+                                        </td>
+                                        <td>$
+                                            <%= e.price %>
+                                        </td>
+                                    </tr>
+                                    <% }) }%>
+                        </tbody>
+                    </table>
+                </div>
+
+        </div>
+        <%- include("partials/footer") -%>

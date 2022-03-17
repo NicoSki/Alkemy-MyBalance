@@ -1,0 +1,45 @@
+<%- include("../partials/head") -%>
+
+<a href="/balance"><button class="btn btn-primaty">🔙</button></a>
+
+<body class="bg-dark d-flex justify-content-center align-items-center" id="particular">
+    <div class="container bg-white rounded shadow p-4 m-4 col-xl-4 col-lg-6">
+        <h2 class="w-100 text-center mb-4">ADD EXPENSE</h2>
+
+        <hr style="color:grey" />
+
+
+        <form method="post" action="/balance/newExpense">
+            <div class="mb-3">
+                <label  class="form-label">DESCRIPTION *</label>
+                <input type="text" class="form-control" placeholder="Ex:Buy a computer mouse" name="description" required>
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label">PRICE *</label>
+                <input type="number" class="form-control" min="1" name="price" required>
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label">DATE OF THE ACCION *</label>
+                <input type="date" class="form-control" name="date" required>
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label">KIND OF EXPENSE *</label>
+                <br>
+                <select name="kind">
+                    <option value="SERVICES">SERVICES</option>
+                    <option value="FOOD">FOOD</option>
+                    <option value="TECHNOLOGY">TECHNOLOGY</option>
+                    <option value="CAR">CAR</option>
+                    <option value="CLOTHES">CLOTHES</option>
+                    <option value="SHOES">SHOES</option>
+                    <option value="MARKET">MARKET</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">ADD RECORD</button>
+        </form>
+    </div>
+
+<%- include("../partials/footer") -%>

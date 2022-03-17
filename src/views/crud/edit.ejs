@@ -1,0 +1,34 @@
+<%- include("../partials/head") -%>
+
+
+    <body class="bg-dark d-flex justify-content-center align-items-center" id="particular">
+        <div class="container bg-white rounded shadow p-4 m-4 col-xl-4 col-lg-6">
+            <h2 class="w-100 text-center mb-4">EDIT EXPENSE</h2>
+
+            <hr style="color:grey" />
+
+
+            <form action="/balance/edit/<%= original._id %>?_method=PUT" method="POST">
+
+                <input type="hidden" name="_method" value="PUT">
+                
+                <div class="mb-3">
+                    <label class="form-label">DESCRIPTION *</label>
+                    <input type="text" class="form-control" name="description" required value=<%=original.description %>>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">PRICE *</label>
+                    <input type="number" class="form-control" min="1" name="price" required value=<%=original.price %>>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">DATE OF THE ACCION *</label>
+                    <input type="date" class="form-control" name="date" required value=<%=original.date %>>
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100">SAVE CHANGES</button>
+            </form>
+        </div>
+
+        <%- include("../partials/footer") -%>
